@@ -1,70 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Casa de Manualidades - Inicio</title>
+    <title>Mi Casa de Manualidades</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "canvas-confetti": "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/+esm"
+        }
+      }
+    </script>
 </head>
+
 <body>
+
     <header>
-        <div class="container">
-            <a href="index.html" class="logo-link">
-                <img src="/logo.png" alt="Mi Casa de Manualidades Logo" class="logo">
-                <h1>Mi Casa de Manualidades</h1>
+        <nav class="navbar">
+            <a href="#home" class="nav-link logo-container">
+                <img src="logo.png" alt="Logo Mi Casa de Manualidades" class="logo">
+                <span>Mi Casa de Manualidades</span>
             </a>
-            <nav>
-                <button id="menu-toggle" aria-label="Toggle menu">☰</button>
-                <ul id="nav-menu">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="cursos.html">Cursos</a></li>
-                    <li><a href="tienda.html">Tienda</a></li>
-                    <li><a href="videos.html">Tutoriales</a></li>
-                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-            <a href="tienda.html#carrito" class="cart-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                <span id="cart-count">0</span>
-            </a>
-        </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Inicio</a></li>
+                <li><a href="#courses" class="nav-link">Cursos</a></li>
+                <li><a href="#shop" class="nav-link">Tienda</a></li>
+                <li><a href="#videos" class="nav-link">Videos</a></li>
+                <li><a href="#about" class="nav-link">Nosotros</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#cart" id="cart-icon-link" class="nav-link cart-icon">
+                    <img src="cart-icon.png" alt="Carrito">
+                    <span id="cart-count">0</span>
+                </a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <img src="/banner.png" alt="Banner con slogan: Crea, Aprende y Disfruta en Familia" class="hero-banner">
+        <!-- PÁGINA DE INICIO -->
+        <section id="home" class="page active">
+            <div class="banner">
+                <div class="banner-content">
+                    <h1>Crea, Aprende y Disfruta en Familia</h1>
+                    <p>Tu espacio para despertar la creatividad. Cursos, materiales y productos hechos con amor.</p>
+                    <div class="banner-buttons">
+                        <a href="#courses" class="btn btn-primary">Explorar Cursos</a>
+                        <a href="#shop" class="btn btn-secondary">Ver Productos</a>
+                    </div>
+                </div>
+                <img src="banner-illustration.png" class="banner-image" alt="Ilustración de manualidades">
+            </div>
+            <div class="welcome-video">
+                <h2>¡Bienvenid@ a nuestro mundo creativo!</h2>
+                <div class="video-container">
+                    <iframe src="https://youtu.be/GMTfX7kCxqI?si=TCHlF5xXlzpxqUoq" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
         </section>
 
-        <section class="welcome container">
-            <h2>¡Bienvenido a nuestro rincón creativo!</h2>
-            <p>Descubre un mundo de color y creatividad. Aquí encontrarás todo lo que necesitas para tus proyectos.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&modestbranding=1&rel=0" title="Video de bienvenida" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- PÁGINA DE CURSOS -->
+        <section id="courses" class="page">
+            <div class="page-header">
+                <h2>Nuestros Cursos</h2>
+                <p>Aprende nuevas técnicas y diviértete creando proyectos increíbles.</p>
+                <div class="search-container">
+                    <input type="text" id="course-search-input" placeholder="Buscar cursos por nombre...">
+                </div>
             </div>
-            <div class="cta-buttons">
-                <a href="cursos.html" class="btn btn-primary">Explorar Cursos</a>
-                <a href="tienda.html" class="btn btn-secondary">Ver Productos</a>
+            <div id="courses-grid" class="grid-container">
+                <!-- Los cursos se insertarán aquí por JS -->
+            </div>
+        </section>
+
+        <!-- PÁGINA DE TIENDA -->
+        <section id="shop" class="page">
+            <div class="page-header">
+                <h2>Tienda de Productos</h2>
+                <p>Encuentra tesoros únicos hechos a mano, perfectos para regalar o decorar.</p>
+                <div class="search-container">
+                    <input type="text" id="product-search-input" placeholder="Buscar productos por nombre...">
+                </div>
+            </div>
+            <div id="products-grid" class="grid-container">
+                <!-- Los productos se insertarán aquí por JS -->
+            </div>
+        </section>
+
+        <!-- PÁGINA DE CARRITO -->
+        <section id="cart" class="page">
+            <div class="page-header">
+                <h2>Tu Carrito de Compras</h2>
+            </div>
+            <div id="cart-container">
+                <!-- El contenido del carrito se insertará aquí por JS -->
+            </div>
+        </section>
+
+
+        <!-- PÁGINA DE VIDEOS -->
+        <section id="videos" class="page">
+            <div class="page-header">
+                <h2>Club Creativo: Videos y Tutoriales</h2>
+                <p>¡Inspírate con nuestras ideas! Aquí tienes tutoriales gratuitos y extractos de nuestros cursos.</p>
+                <div class="search-container">
+                    <input type="text" id="video-search-input" placeholder="Buscar videos por título...">
+                </div>
+            </div>
+            <div id="videos-grid" class="grid-container">
+                <!-- Los videos se insertarán aquí por JS -->
+            </div>
+        </section>
+
+        <!-- PÁGINA SOBRE NOSOTROS -->
+        <section id="about" class="page">
+            <div class="page-header">
+                <h2>Nuestra Historia</h2>
+            </div>
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Pasión que se convirtió en un sueño</h3>
+                    <p>"Mi Casa de Manualidades" nació en 2020, en una pequeña mesa de cocina llena de hilos, pinturas y
+                        muchas ideas. Lo que comenzó como un pasatiempo familiar, rápidamente se convirtió en una pasión
+                        por compartir la alegría de crear con los demás. Creemos que las manualidades son una forma
+                        maravillosa de conectar, relajarse y expresar nuestra personalidad.</p>
+                    <h4>Nuestra Misión</h4>
+                    <p>Ofrecer un espacio inspirador y accesible para que personas de todas las edades descubran y
+                        desarrollen su potencial creativo, fortaleciendo lazos familiares y el bienestar personal a
+                        través del arte.</p>
+                </div>
+                <div class="team-gallery">
+                    <div class="team-member">
+                        <img src="team-member-1.png" alt="Foto del equipo 1">
+                        <h4>Ana López</h4>
+                        <p>Fundadora y Creativa</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="team-member-2.png" alt="Foto del equipo 2">
+                        <h4>Carlos Vera</h4>
+                        <p>Instructor y Logística</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA DE CONTACTO -->
+        <section id="contact" class="page">
+            <div class="page-header">
+                <h2>¡Hablemos!</h2>
+                <p>¿Tienes alguna pregunta o una idea genial? Nos encantaría saber de ti.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Tu Nombre" required>
+                        <input type="email" placeholder="Tu Correo Electrónico" required>
+                        <textarea rows="5" placeholder="Tu Mensaje" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p><strong>Email:</strong> hola@micasademanualidades.com</p>
+                    <p><strong>WhatsApp:</strong> +12 345 678 90</p>
+                    <a href="https://wa.me/1234567890?text=Hola%20%F0%9F%91%8B%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Mi%20Casa%20de%20Manualidades."
+                        target="_blank" class="btn btn-whatsapp">
+                        Chatea con nosotros en WhatsApp
+                    </a>
+                    <div class="social-media">
+                        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+                    </div>
+                    <div class="map-container">
+                        <img src="map-illustration.png" alt="Mapa ilustrado de la tienda">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Mi Casa de Manualidades. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook">F</a>
-                <a href="#" aria-label="Instagram">I</a>
-                <a href="#" aria-label="YouTube">Y</a>
-            </div>
-        </div>
+        <p>© 2024 Mi Casa de Manualidades. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- MODAL PARA CURSOS -->
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+                <!-- Contenido del modal se insertará aquí por JS -->
+            </div>
+        </div>
+    </div>
 
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
